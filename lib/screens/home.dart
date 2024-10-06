@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:spotter/screens/profile.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -86,15 +88,26 @@ class _HomePageState extends State<HomePage> {
           'Parking Spots Near You',
           style: TextStyle(color: Colors.white), // Make the title white
         ),
-        backgroundColor: Colors.green, // Make the AppBar green
+        backgroundColor: Colors.green.shade200, // Make the AppBar green
         iconTheme: IconThemeData(
           color: Colors.white, // Make the icon white
         ),
         leading: IconButton(
-          icon: Icon(Icons.person), // Profile icon
+          icon: CircleAvatar(
+            radius: 24,
+            backgroundColor: Colors.green.shade50,
+            child: Icon(
+              IconlyBold.profile,
+              color: Colors.green.shade900,
+              size: 22,
+            ),
+          ), // Profile icon
           onPressed: () {
             // Navigate to the profile page
-            Navigator.pushNamed(context, '/profile');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProfilePage()),
+            );
           },
         ),
       ),
