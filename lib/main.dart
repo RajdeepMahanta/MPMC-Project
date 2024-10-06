@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:spotter/screens/home.dart';
-import 'package:spotter/screens/profile.dart';
+import 'package:spotter/screens/login.dart';
+
 
 void main() {
-  runApp(SmartParkingApp());
+  runApp(MyApp());
 }
 
-class SmartParkingApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Spotter',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      // Define routes for navigation
-      routes: {
-        '/': (context) => HomePage(),         // Home screen as the initial page
-        '/profile': (context) => ProfilePage(), // Profile page route
-      },
+      home: LoginPage(), // Set LoginPage as the home
     );
   }
 }
